@@ -15,10 +15,11 @@
 - name: crea pagina de bienvenida
   copy:
     src: index.html
-    dest: /var/www/html/index.html
+    dest: "/var/www/html/index.html"
+    notify: "restart service httpd"
 
 - name: copia template config
-  tempalte:
+  template:
     src: template_ejemplo.j2
-    dest: /var/www/html/test2.conf
+    dest: "/var/tmp/test2.conf"
     notify: "restart service httpd"
