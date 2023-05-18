@@ -13,7 +13,10 @@
         service:
           - name: httpd
           - state: started
-    # ignore_errors: true
-  # - name: mostrar mensaje
-  #   debug:
-  #     msg: "la tarea anterior ha ido chachi"
+    always:
+      - name: La web responde?
+        uri:
+          url: "http://localhost"
+      - name: Muestro un mensaje
+        debug:
+          msg: "funciono!!!"
