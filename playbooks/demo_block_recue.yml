@@ -9,15 +9,14 @@
         uri:
           url: "http://localhost"
     rescue:
-      - name: servicio apache esta parado, por lo tanto lo levanto
+      - name: Asumo que el servicio httpd esta parado, por lo tanto lo levanto
         service:
-          - name: httpd
-          - state: started
-
-    # always:
-    #   - name: La web responde?
-    #     uri:
-    #       url: "http://localhost"
-    #   - name: Muestro un mensaje
-    #     debug:
-    #       msg: "funciono!!!"
+          name: httpd
+          state: started
+    always:
+      - name: La web responde?
+        uri:
+          url: "http://localhost"
+      - name: Muestro un mensaje
+        debug:
+          msg: "funciono!!!"
