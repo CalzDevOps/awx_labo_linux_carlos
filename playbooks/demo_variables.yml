@@ -16,10 +16,10 @@
   tasks:
   - name: mostramos contenido de la variable
     debug:
-    msg:
-    - "nombre: {{ empleado.nombre }}"
-    - "wiw: {{ empleado.wiw }}"
-    - "nombre: {{ empleados[0].nombre }}"
-    - "wiw: {{ empleados[0].wiw }}"
-    - "nombre: {{ empleados[1].nombre }}"
-    - "wiw: {{ empleados[1].wiw }}"
+      msg:
+      - "nombre: {{ empleado.nombre }}"
+      - "wiw: {{ empleado.wiw }}"
+      - "nombre: {{ empleados[0].nombre }}"
+      - "wiw: {{ empleados[0].wiw }}"
+      - "nombre: {{ empleados[1].nombre }}"
+      - "wiw: {{ empleados[1].wiw }}"
