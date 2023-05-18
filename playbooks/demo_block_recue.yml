@@ -13,10 +13,11 @@
         service:
           - name: httpd
           - state: started
-    always:
-      - name: La web responde?
-        uri:
-          url: "http://localhost"
-      - name: Muestro un mensaje
-        debug:
-          msg: "funciono!!!"
+
+    # always:
+    #   - name: La web responde?
+    #     uri:
+    #       url: "http://localhost"
+    #   - name: Muestro un mensaje
+    #     debug:
+    #       msg: "funciono!!!"
