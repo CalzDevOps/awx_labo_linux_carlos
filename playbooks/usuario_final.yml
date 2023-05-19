@@ -18,11 +18,10 @@
     register: output
   - name: mostrar output por msg
     debug:
-      var: output
-      #msg: 
-      #- "{{ output.state }}"  #variable '.' lo que sea para ver algo específico
-      #- "{{ output.name }}"  #variable '.' lo que sea para ver algo específico
-  # - name: mostrar output por var
-  #   debug:
-  #     var: output.state , output.name  #variable '.' lo que sea para ver algo específico
+      msg: 
+      - "{{ output.state }}"  #variable '.' lo que sea para ver algo específico
+      - "{{ output.name }}"  #variable '.' lo que sea para ver algo específico
+  - name: mostrar output por var
+    debug:
+      var: output.state , output.name  #variable '.' lo que sea para ver algo específico
 
