@@ -1,5 +1,5 @@
 ---
-- hosts: linux03
+- hosts: "{{ servidores }}"
   become: true
   tasks:
   - name: instalamos apache
