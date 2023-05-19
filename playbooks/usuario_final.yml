@@ -1,0 +1,27 @@
+---
+- hosts: "{{ servidores }}" #lo especificas al lanzar el playbook
+  become: true
+  gather_facts: false
+  tasks:
+  - name: mostrar debug
+    debug:
+      var: nombre , equipo
+  - name: crear un usuario
+    user: 
+      name: "{{ nombre }}"
+      groups: "{{ equipo }}"
+      shell: "/bin/bash"
+      comment: "usuario creado por Ansible"
+      state: present
+    #with_items: "{{ usuarios }}" #dentro de all.yml
+    #when: usuarios_present | bool 
+    register: output
+  - name: mostrar output por msg
+    debug:
+      msg: 
+      - "{{ output.state }}"  #variable '.' lo que sea para ver algo específico
+      - "{{ output.name }}"  #variable '.' lo que sea para ver algo específico
+  - name: mostrar output por var
+    debug:
+      var: output.state , output.name  #variable '.' lo que sea para ver algo específico
+
